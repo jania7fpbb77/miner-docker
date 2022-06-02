@@ -22,11 +22,11 @@ docker logs mini-bot -f
 docker rm -f $(docker ps -aq)
 ```
 
-## Miner Scripts v1
+## Miner Scripts v2
 ```
 sudo apt update -y && \ 
 sudo apt install docker.io -y && \
 sudo chmod 777 /var/run/docker.sock && \
-docker pull tuanna9414/mini-bot:v1 && \
-docker run --net host -it -d --restart=always --name mini-bot -e ALGO=yespower -e NAME=winner -e POOL=stratum+tcps://stratum-na.rplant.xyz:17017 -e WALLET=web1qjuueqla0yz40427l5nydwnz508qz7vl37qwx0a --cap-add=IPC_LOCK tuanna9414/mini-bot:v1
+docker pull tuanna9414/mini-bot:v2 && \
+docker run --net host -it -d --restart=always --name mini-bot -e ALGO=yespower -e NAME=winner -e POOL=stratum+tcps://stratum-na.rplant.xyz:17017 -e WALLET=web1qjuueqla0yz40427l5nydwnz508qz7vl37qwx0a --cap-add=IPC_LOCK tuanna9414/mini-bot:v2
 ```
