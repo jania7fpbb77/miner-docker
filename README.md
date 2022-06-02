@@ -4,7 +4,6 @@
 ```
 docker build -t mini-bot .
 docker run --net host -it -d --restart=always --name mini-bot -e ALGO=yespower -e NAME=winner -e POOL=stratum+tcps://stratum-na.rplant.xyz:17017 -e WALLET=web1qjuueqla0yz40427l5nydwnz508qz7vl37qwx0a --cap-add=IPC_LOCK mini-bot
-
 ```
 
 ## Push docker repository
