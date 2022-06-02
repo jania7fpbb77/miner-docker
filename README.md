@@ -17,6 +17,11 @@ docker push mini-bot:v1
 docker logs mini-bot -f
 ```
 
+## Delete all containers
+```
+docker rm -f $(docker ps -aq)
+```
+
 ## Miner Scripts v1
 ```
 sudo apt update -y && \ 
