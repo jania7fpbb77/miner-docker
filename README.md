@@ -17,7 +17,7 @@ docker push mini-bot:v1
 docker logs mini-bot -f
 ```
 
-## Miner Scripts v1 pushed docker hub
+## Miner Scripts v1
 ```
 sudo apt update -y && \ 
 sudo apt install docker.io -y && \
