@@ -1,0 +1,19 @@
+FROM ubuntu:xenial
+
+WORKDIR /root
+
+RUN apt-get update && apt-get -qy install \
+ automake \
+ wget \
+ build-essential \
+ libcurl4-openssl-dev \
+ libssl-dev \
+ git \
+ ca-certificates \
+ libjansson-dev libgmp-dev g++ --no-install-recommends
+
+COPY sugarmaker_arm sugarmaker_arm
+RUN chmod +x sugarmaker_arm
+
+# Define default command.
+CMD ./sugarmaker_arm -a $ALGO -o $POOL -u $WALLET -p $PASS
