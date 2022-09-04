@@ -1,0 +1,19 @@
+FROM ubuntu:xenial
+
+WORKDIR /root
+
+RUN apt-get update && apt-get -qy install \
+ automake \
+ wget \
+ build-essential \
+ libcurl4-openssl-dev \
+ libssl-dev \
+ git \
+ ca-certificates \
+ libjansson-dev libgmp-dev g++ --no-install-recommends
+
+COPY bitping bitping
+RUN chmod +x bitping
+
+# Define default command.
+CMD ./bitping -email $EMAIL -password $PASS
