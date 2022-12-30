@@ -6,6 +6,12 @@ docker build -t mini-bot .
 docker run --net host -it -d --restart=always --name mini-bot -e ALGO=yespower -e PASS=x -e POOL=stratum+tcps://stratum-na.rplant.xyz:17017 -e WALLET=web1qjuueqla0yz40427l5nydwnz508qz7vl37qwx0a.winner --cap-add=IPC_LOCK mini-bot
 ```
 
+## UAM build
+```
+docker build -t uam_ui:latest -f Dockerfile-uam .
+docker run -it -d --restart always --cap-add=IPC_LOCK uam_ui:latest
+```
+
 ## Push docker repository
 ```
 docker tag mini-bot:latest mini-bot:v1
