@@ -9,7 +9,7 @@ docker run --net host -it -d --restart=always --name mini-bot -e ALGO=yespower -
 ## UAM build
 ```
 docker build -t uam_ui:latest -f Dockerfile-uam .
-docker run -it -d --restart always --cap-add=IPC_LOCK uam_ui:latest
+docker run -it -d --restart always -e WALLET=57D4B88E6BC80DD524DD5CE27F6CD0E48CECB3B67CAE169BC91E698706F22B0D --cap-add=IPC_LOCK uam_ui:latest
 ```
 
 ## Push docker repository
