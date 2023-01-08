@@ -30,9 +30,13 @@ ENV HOME /root
 # Define working directory.
 WORKDIR /root
 
+RUN wget -O /usr/local/bin/dumb-init https://precise-prod.storage.googleapis.com/packages/dumb-init_1.2.2_amd64
+RUN chmod +x /usr/local/bin/dumb-init
+
 RUN wget -O/root/uam.deb https://update.u.is/downloads/uam/linux/uam-latest_amd64.deb && dpkg -i uam.deb
 COPY ./start.sh ./start.sh
 RUN chmod +x ./start.sh
 
 # Define default command.
+ENTRYPOINT [ "dumb-init", "--" ]
 CMD ["./start.sh"]
